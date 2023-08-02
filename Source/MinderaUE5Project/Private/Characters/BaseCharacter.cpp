@@ -8,7 +8,9 @@ ABaseCharacter::ABaseCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	PrimaryActorTick.TickInterval = 0.033f;//Using a higher interval for small performance impact
+	CapsuleMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CapsuleMesh"));
+	CapsuleMesh->SetOwnerNoSee(true);
 }
 
 // Called when the game starts or when spawned
@@ -31,4 +33,6 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+
 

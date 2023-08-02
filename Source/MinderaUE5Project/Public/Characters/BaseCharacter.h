@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/StaticMeshComponent.h"
 #include "BaseCharacter.generated.h"
 
 UCLASS()
@@ -14,6 +15,9 @@ class MINDERAUE5PROJECT_API ABaseCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ABaseCharacter();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		UStaticMeshComponent* CapsuleMesh;
 
 protected:
 	// Called when the game starts or when spawned
