@@ -41,3 +41,10 @@ void ABaseCharacter::ReceiveMoveInput(const FVector2D& input)
 	AddMovementInput(FVector(GetActorForwardVector().X * input.X, GetActorRightVector().Y * input.Y, 0.f));
 }
 
+void ABaseCharacter::ReceiveLookInput(const FVector2D& input)
+{
+	if (Controller == nullptr)
+		return;
+	AddControllerYawInput(input.X * mouseSensitivity);
+	AddControllerPitchInput(input.Y * mouseSensitivity);
+}
