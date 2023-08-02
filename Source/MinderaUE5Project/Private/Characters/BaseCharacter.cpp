@@ -34,5 +34,10 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-
+void ABaseCharacter::ReceiveMoveInput(const FVector2D& input)
+{
+	if (Controller == nullptr)
+		return;
+	AddMovementInput(FVector(GetActorForwardVector().X * input.X, GetActorRightVector().Y * input.Y, 0.f));
+}
 
