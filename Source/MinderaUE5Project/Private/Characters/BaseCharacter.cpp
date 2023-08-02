@@ -10,13 +10,17 @@ ABaseCharacter::ABaseCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.TickInterval = 0.033f;//Using a higher interval for small performance impact
 	CapsuleMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CapsuleMesh"));
+	CapsuleMesh->SetupAttachment(RootComponent);
 	CapsuleMesh->SetOwnerNoSee(true);
+	
 }
 
 // Called when the game starts or when spawned
 void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	if(IsValid(CapsuleMesh))
+		CapsuleMesh->RegisterComponent();
 	
 }
 
