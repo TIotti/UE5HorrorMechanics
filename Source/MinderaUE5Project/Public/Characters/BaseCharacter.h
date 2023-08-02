@@ -19,8 +19,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 		UStaticMeshComponent* CapsuleMesh;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		float mouseSensitivity;
 
 protected:
 	// Called when the game starts or when spawned
@@ -33,9 +31,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UFUNCTION(BlueprintCallable)
-		void ReceiveMoveInput(const FVector2D& input);
-	UFUNCTION(BlueprintCallable)
-		void ReceiveLookInput(const FVector2D& input);
+	
 
 };
