@@ -9,9 +9,12 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(ClassGroup = AI, HideCategories = (Activation, "Components|Activation", Collision), meta = (BlueprintSpawnableComponent))
 class MINDERAUE5PROJECT_API UPlayerPawnSensing : public UPawnSensingComponent
 {
 	GENERATED_BODY()
+
+public:
+	virtual FRotator GetSensorRotation() const override;
 	
 };
