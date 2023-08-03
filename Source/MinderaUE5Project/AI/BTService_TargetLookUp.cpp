@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "BTService_TargetLookUp.h"
 #include "../Characters/PlayerCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "AIController.h"
-#include "BTService_TargetLookUp.h"
 
 UBTService_TargetLookUp::UBTService_TargetLookUp(const FObjectInitializer& ObjectInitializer) : UBTService(ObjectInitializer)
 {
